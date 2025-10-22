@@ -1,6 +1,7 @@
 'use strict';
 
-import people from './lib/people.json' assert { type: 'json' };
+// eslint-disable-next-line no-console
+console.log(people); // można usunąć, służy do podglądu danych
 
 document.addEventListener('DOMContentLoaded', () => {
   const table = document.querySelector('.dashboard');
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     table.appendChild(row);
   });
 });
+
 
 
 
