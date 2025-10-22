@@ -1,5 +1,7 @@
 'use strict';
 
+import people from './lib/people.json' assert { type: 'json' };
+
 document.addEventListener('DOMContentLoaded', () => {
   const table = document.querySelector('.dashboard');
   if (!table) return;
