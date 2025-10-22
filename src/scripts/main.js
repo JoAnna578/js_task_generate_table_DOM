@@ -40,11 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'Jan Haverbeke', sex: 'm', born: 1671, died: 1731 },
     { name: 'Anna van Hecke', sex: 'f', born: 1607, died: 1670 },
     { name: 'Maria Sturm', sex: 'f', born: 1835, died: 1917 },
-    { name: 'Jacobus Bernardus van Brussel', sex: 'm', born: 1736, died: 1809 }
+    { name: 'Jacobus Bernardus van Brussel', sex: 'm', born: 1736, died: 1809 },
   ];
 
   const table = document.querySelector('.dashboard');
-  if (!table) return;
 
   people.forEach(person => {
     const tr = document.createElement('tr');
@@ -58,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       person.born,
       person.died,
       age,
-      century
+      century,
     ];
 
     cells.forEach(text => {
