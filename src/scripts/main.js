@@ -1,43 +1,28 @@
 'use strict';
 
-import people from './people.json';
+import people from './lib/people.json' assert { type: 'json' };
 
 document.addEventListener('DOMContentLoaded', () => {
   const table = document.querySelector('.dashboard');
-  if (!table) return;
 
   people.forEach(person => {
     const row = document.createElement('tr');
+    const age = person.died - person.born;
+    const century = Math.ceil(person.died / 100);
 
-    const nameTd = document.createElement('td');
-    nameTd.textContent = person.name;
-    row.appendChild(nameTd);
-
-    const genderTd = document.createElement('td');
-    genderTd.textContent = person.sex;
-    row.appendChild(genderTd);
-
-    const bornTd = document.createElement('td');
-    bornTd.textContent = person.born;
-    row.appendChild(bornTd);
-
-    const diedTd = document.createElement('td');
-    diedTd.textContent = person.died;
-    row.appendChild(diedTd);
-
-    const ageTd = document.createElement('td');
-    ageTd.textContent = person.died - person.born;
-    row.appendChild(ageTd);
-
-    const centuryTd = document.createElement('td');
-    centuryTd.textContent = Math.ceil(person.died / 100);
-    row.appendChild(centuryTd);
+    row.innerHTML =
+      `<td>${person.name}</td>` +
+      `<td>${person.sex}</td>` +
+      `<td>${person.born}</td>` +
+      `<td>${person.died}</td>` +
+      `<td>${age}</td>` +
+      `<td>${century}</td>`;
 
     table.appendChild(row);
   });
 });
 
-   
+ 
 
 
 
