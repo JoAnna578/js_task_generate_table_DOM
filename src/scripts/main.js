@@ -1,3 +1,6 @@
+// Załaduj dane z people.json (tak jak w testach Cypress)
+const people = require('../lib/people.json');
+
 document.addEventListener('DOMContentLoaded', () => {
   const table = document.querySelector('.dashboard');
   if (!table) return;
@@ -35,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     centuryTd.textContent = Math.ceil(person.died / 100);
     row.appendChild(centuryTd);
 
-    // Dodaj wiersz do tabeli
     table.appendChild(row);
   });
 });
